@@ -27,6 +27,11 @@ Puerto: `8083`. Todas las peticiones a `/api/**` requieren el header:
 X-API-KEY: LAB7-EMPLEADOS-2026
 ```
 
+## Swagger
+
+Con la API levantada se puede probar desde http://localhost:8083/swagger-ui.html
+(dar clic en **Authorize** y poner la API Key).
+
 ## Endpoints
 
 | Método | Ruta                                   | Descripción                     | Respuesta      |
