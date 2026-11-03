@@ -4,10 +4,7 @@ import com.laboratorio.proveedores.model.Estado;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-/**
- * Datos de entrada para crear un proveedor. El id lo asigna el servidor.
- * Si no se envía estado, el proveedor se crea como ACTIVO.
- */
+// Lo que se recibe al crear un proveedor. El id se genera solo y si no mandan estado queda ACTIVO
 public record ProveedorRequest(
         @NotBlank(message = "El nombre no puede estar vacío")
         String nombre,

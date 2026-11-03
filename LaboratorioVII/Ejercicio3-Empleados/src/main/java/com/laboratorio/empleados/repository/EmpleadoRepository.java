@@ -9,10 +9,7 @@ import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * Repositorio en memoria: los empleados se guardan en una lista
- * y se pierden al reiniciar la aplicación.
- */
+// Aqui se guardan los empleados en una lista, por eso se borran cuando se reinicia la app
 @Repository
 public class EmpleadoRepository {
 

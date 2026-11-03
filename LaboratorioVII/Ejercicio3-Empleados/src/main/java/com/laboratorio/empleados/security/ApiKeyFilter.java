@@ -16,10 +16,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-/**
- * Valida el header X-API-KEY antes de que la petición llegue a los controladores.
- * Si falta o no coincide con la clave configurada responde 401 UNAUTHORIZED.
- */
+// Este filtro revisa que venga el header X-API-KEY con la clave correcta antes de llegar al controller.
+// Si no viene o esta mal se devuelve 401.
 @Component
 public class ApiKeyFilter extends OncePerRequestFilter {
 
@@ -55,7 +53,7 @@ public class ApiKeyFilter extends OncePerRequestFilter {
     }
 
     private boolean esValida(String recibida) {
-        // Comparación en tiempo constante para no filtrar información por tiempos de respuesta
+        // uso MessageDigest.isEqual en vez de equals porque es mas seguro para comparar claves
         return MessageDigest.isEqual(
                 recibida.getBytes(StandardCharsets.UTF_8),
                 apiKey.getBytes(StandardCharsets.UTF_8));

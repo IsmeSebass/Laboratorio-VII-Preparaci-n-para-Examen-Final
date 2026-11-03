@@ -4,10 +4,7 @@ import com.laboratorio.empleados.model.Estado;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-/**
- * Datos de entrada para crear un empleado. El id lo asigna el servidor.
- * Si no se envía estado, el empleado se crea como ACTIVO.
- */
+// Lo que se recibe al crear un empleado. El id se genera solo y si no mandan estado queda ACTIVO
 public record EmpleadoRequest(
         @NotBlank(message = "El nombre no puede estar vacío")
         String nombre,
